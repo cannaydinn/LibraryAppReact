@@ -2,6 +2,9 @@
 
 This project is a Book Management System built with React, Axios, and a backend API. It allows users to manage books, authors, publishers, and categories in a library-like system. The system provides functionalities to add, update, delete, and view books, authors, and other relevant information.
 
+## NETLIFY
+https://scintillating-granita-ee2d4c.netlify.app/
+
 ## Features
 
 - **Book Management**: Add, update, delete books, and view the list of books in the library.
