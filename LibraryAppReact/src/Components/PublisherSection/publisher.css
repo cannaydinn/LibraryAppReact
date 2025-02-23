@@ -1,0 +1,10 @@
+button{
+    pointer-events: auto;
+    z-index: 10;
+    cursor: pointer;
+
+}
+
+.text-shadow{
+    text-shadow: 2px 2px #6e6e6e;
+}

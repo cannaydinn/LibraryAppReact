@@ -1,0 +1,16 @@
+section.welcome{
+    background-image: url("library.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container p{
+    color: white;
+    margin: 0 20px 0 20px;
+    text-shadow: 2px 2px #505050;
+}
+
+.container p:nth-child(2){
+    text-align: justify;
+}
