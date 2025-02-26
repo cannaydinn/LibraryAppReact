@@ -164,7 +164,7 @@ function Book() {
               <Select
                 value={newBook.categories.id}
                 onChange={(e) =>
-                  setNewBook({ ...newBook, categories: e.target.value })
+                  setNewBook({ ...newBook, categories: {id: e.target.value} })
                 }
               >
                 {categories.map((category) => (
