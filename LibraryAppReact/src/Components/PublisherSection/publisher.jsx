@@ -21,7 +21,7 @@ function Publisher() {
 
   useEffect(() => {
     const request = async () => {
-      const res = await axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/publishers");
+      const res = await axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/publishers");
       setPublishers(res.data);
       setUpdate(true);
     };
@@ -38,7 +38,7 @@ function Publisher() {
     console.log("Tıklandı!");
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BASE_URL+"/api/v1/publishers",
+        import.meta.env.VITE_BASE_URL + "/api/v1/publishers",
         newPublisher
       );
       setUpdate(false);
@@ -61,7 +61,7 @@ function Publisher() {
   const handlePublishersDelete = async (id) => {
     console.log("Tıklandı");
     try {
-      axios.delete(import.meta.env.VITE_BASE_URL+`/api/v1/publishers/${id}`);
+      axios.delete(import.meta.env.VITE_BASE_URL + `/api/v1/publishers/${id}`);
       handleAlert("Publisher Deleted");
       setUpdate(false);
       console.log("Delete başarılı:");
@@ -75,7 +75,7 @@ function Publisher() {
   };
 
   const handleUpdatePublisher = async () => {
-    await axios.put(import.meta.env.VITE_BASE_URL+`/api/v1/publishers/${updatePublisher.id}`, updatePublisher);
+    await axios.put(import.meta.env.VITE_BASE_URL + `api/v1/publishers/${updatePublisher.id}`, updatePublisher);
     setUpdatePublisher(initialPublisher);
     handleAlert("Publisher Updated");
     setUpdate(false);

@@ -33,10 +33,10 @@ function Book() {
     const fetchData = async () => {
       const [bookRes, authorRes, publisherRes, categoryRes] = await Promise.all(
         [
-          axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/books"),
-          axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/authors"),
-          axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/publishers"),
-          axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/categories"),
+          axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/books"),
+          axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/authors"),
+          axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/publishers"),
+          axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/categories"),
         ]
       );
       setBooks(bookRes.data);
@@ -50,7 +50,7 @@ function Book() {
 
   const handleBooksPost = async () => {
     try {
-      await axios.post(import.meta.env.VITE_BASE_URL+"/api/v1/books", newBook);
+      await axios.post(import.meta.env.VITE_BASE_URL + "/api/v1/books", newBook);
       setUpdate(false);
       setNewBook(initialBook);
       handleAlert("Book Added");
@@ -61,7 +61,7 @@ function Book() {
 
   const handleBooksDelete = async (id) => {
     try {
-      await axios.delete(import.meta.env.VITE_BASE_URL+`/api/v1/books/${id}`);
+      await axios.delete(import.meta.env.VITE_BASE_URL + `/api/v1/books/${id}`);
       handleAlert("Book Deleted");
       setUpdate(false);
     } catch (error) {
@@ -72,7 +72,7 @@ function Book() {
   const handleUpdateBook = async () => {
     try {
       await axios.put(
-        import.meta.env.VITE_BASE_URL+`/api/v1/books/${updateBook.id}`,
+        import.meta.env.VITE_BASE_URL + `/api/v1/books/${updateBook.id}`,
         updateBook
       );
       setUpdateBook(initialBook);

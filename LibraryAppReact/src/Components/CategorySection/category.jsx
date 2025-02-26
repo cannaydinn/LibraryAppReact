@@ -20,7 +20,7 @@ function Category() {
 
   useEffect(() => {
     const request = async () => {
-      const res = await axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/categories");
+      const res = await axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/categories");
       setCategories(res.data);
       setUpdate(true);
     };
@@ -37,7 +37,7 @@ function Category() {
     console.log("Tıklandı!");
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BASE_URL+"/api/v1/categories",
+        import.meta.env.VITE_BASE_URL + "/api/v1/categories",
         newCategory
       );
       setUpdate(false);
@@ -60,7 +60,7 @@ function Category() {
   const handleCategoriesDelete = async (id) => {
     console.log("Tıklandı");
     try {
-      axios.delete(import.meta.env.VITE_BASE_URL+`/api/v1/categories/${id}`);
+      axios.delete(import.meta.env.VITE_BASE_URL + `/api/v1/categories/${id}`);
       handleAlert("Category Deleted");
       setUpdate(false);
       console.log("Delete başarılı:");
@@ -74,7 +74,7 @@ function Category() {
   };
 
   const handleUpdateCategory = async () => {
-    await axios.put(import.meta.env.VITE_BASE_URL+`/api/v1/categories/${updateCategory.id}`, updateCategory);
+    await axios.put(import.meta.env.VITE_BASE_URL + `/api/v1/categories/${updateCategory.id}`, updateCategory);
     setUpdateCategory(initialCategory);
     handleAlert("Category Updated");
     setUpdate(false);

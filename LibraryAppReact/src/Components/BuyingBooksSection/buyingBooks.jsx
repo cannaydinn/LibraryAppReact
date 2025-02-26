@@ -37,13 +37,13 @@ function BuyingBooks() {
 
   useEffect(() => {
     const borrowRequest = async () => {
-      const res = await axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/borrows");
+      const res = await axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/borrows");
       setBorrows(res.data);
       setUpdate(true);
     };
 
     const bookRequest = async () => {
-      const res = await axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/books");
+      const res = await axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/books");
       setBooks(res.data);
     };
     borrowRequest();
@@ -60,7 +60,7 @@ function BuyingBooks() {
     console.log("Tıklandı!");
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BASE_URL+"/api/v1/borrows",
+        import.meta.env.VITE_BASE_URL + "/api/v1/borrows",
         newBorrow
       );
       setUpdate(false);
@@ -83,7 +83,7 @@ function BuyingBooks() {
   const handleBorrowsDelete = async (id) => {
     console.log("Tıklandı");
     try {
-      await axios.delete(import.meta.env.VITE_BASE_URL+`/api/v1/borrows/${id}`);
+      await axios.delete(import.meta.env.VITE_BASE_URL + `/api/v1/borrows/${id}`);
       handleAlert("Borrow Deleted");
       setUpdate(false);
       console.log("Delete başarılı:");
@@ -98,7 +98,7 @@ function BuyingBooks() {
 
   const handleUpdateBorrow = async () => {
     await axios.put(
-      import.meta.env.VITE_BASE_URL+`/api/v1/borrows/${updateBorrow.id}`,
+      import.meta.env.VITE_BASE_URL + `/api/v1/borrows/${updateBorrow.id}`,
       updateBorrow
     );
     setUpdateBorrow(initialBorrows);

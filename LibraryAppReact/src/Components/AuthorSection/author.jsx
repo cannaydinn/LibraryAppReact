@@ -21,7 +21,7 @@ function Author() {
 
   useEffect(() => {
     const request = async () => {
-      const res = await axios.get(import.meta.env.VITE_BASE_URL+"/api/v1/authors");
+      const res = await axios.get(import.meta.env.VITE_BASE_URL + "/api/v1/authors");
       setAuthors(res.data);
       setUpdate(true);
     };
@@ -38,7 +38,7 @@ function Author() {
     console.log("Tıklandı!");
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BASE_URL+"/api/v1/authors",
+        import.meta.env.VITE_BASE_URL + "/api/v1/authors",
         newAuthor
       );
       setUpdate(false);
@@ -61,7 +61,7 @@ function Author() {
   const handleAuthorsDelete = async (id) => {
     console.log("Tıklandı");
     try {
-      await axios.delete(import.meta.env.VITE_BASE_URL+`/api/v1/authors/${id}`);
+      await axios.delete(import.meta.env.VITE_BASE_URL + `/api/v1/authors/${id}`);
       handleAlert("Author Deleted");
       setUpdate(false);
       console.log("Delete başarılı:");
@@ -75,7 +75,7 @@ function Author() {
   };
 
   const handleUpdateAuthor = async () => {
-    await axios.put(import.meta.env.VITE_BASE_URL+`/api/v1/authors/${updateAuthor.id}`, updateAuthor);
+    await axios.put(import.meta.env.VITE_BASE_URL + `/api/v1/authors/${updateAuthor.id}`, updateAuthor);
     setUpdateAuthor(initialAuthor);
     handleAlert("Author Updated");
     setUpdate(false);
