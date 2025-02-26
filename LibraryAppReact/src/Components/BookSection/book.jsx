@@ -11,8 +11,8 @@ import Select from "@mui/material/Select";
 
 const initialBook = {
   name: "",
-  publicationYear: 0,
-  stock: 0,
+  publicationYear: "",
+  stock: "",
   author: {},
   publisher: {},
   categories: [{}],
