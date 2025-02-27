@@ -18,7 +18,6 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import UpgradeIcon from "@mui/icons-material/Upgrade";
-import "./Book.css";
 
 const initialBook = {
   name: "",
