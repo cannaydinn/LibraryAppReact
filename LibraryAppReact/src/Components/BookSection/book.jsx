@@ -29,7 +29,7 @@ const initialBook = {
   publishers: [],
 };
 
-const Book = () => {
+function Book() {
   const [newBook, setNewBook] = useState(initialBook);
   const [books, setBooks] = useState(null);
   const [categories, setCategories] = useState([]);
